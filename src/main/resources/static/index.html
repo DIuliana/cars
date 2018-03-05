@@ -1,0 +1,42 @@
+<html>
+test for
+<body>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1782991052007750',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v1.2'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            console.log(response);
+         });
+   }
+
+</script>
+<fb:login-button
+        scope="manage_pages,publish_pages"
+        onlogin="checkLoginState();">
+</fb:login-button>
+
+<button type="button"  onclick="checkLoginState();">Click Me!</button>
+
+</body>
+
+</html>
